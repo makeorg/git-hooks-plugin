@@ -1,0 +1,19 @@
+organization := "org.make"
+name := "git-hooks-plugin"
+version := "1.0.1-SNAPSHOT"
+
+description :=
+  """
+    |SBT plugin allowing to easilly manage git hooks on a project
+  """.stripMargin
+
+scalaVersion := "2.10.4"
+
+sbtPlugin := true
+
+publishMavenStyle := false
+
+licenses += "Apache-2.0" -> url("https://www.apache.org/licenses/LICENSE-2.0.html")
+
+bintrayOrganization in bintray := None
+bintrayRepository := "make-sbt-plugins"
