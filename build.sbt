@@ -17,3 +17,5 @@ licenses += "Apache-2.0" -> url("https://www.apache.org/licenses/LICENSE-2.0.htm
 
 bintrayOrganization in bintray := None
 bintrayRepository := "make-sbt-plugins"
+
+scalastyleConfig := baseDirectory.value / "scalastyle-config.xml"
