@@ -16,6 +16,11 @@ resolvers += Resolver.url(
 ## Configure hooks
 
 ```sbtshell
+import org.make.GitHooks
+
+enablePlugins(GitHooks)
+
+
 gitApplyPatchHook := Some(baseDirectory.value / "hooks" / "apply-patch.sh")
 gitCommitMessageHook := Some(baseDirectory.value / "hooks" / "commit-msg.sh")
 gitPostUpdateHook := Some(baseDirectory.value / "hooks" / "post-update.sh")
