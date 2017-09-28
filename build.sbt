@@ -1,6 +1,6 @@
 organization := "org.make"
 name := "git-hooks-plugin"
-version := "1.0.1"
+version := "1.0.2-SNAPSHOT"
 
 description :=
   """
