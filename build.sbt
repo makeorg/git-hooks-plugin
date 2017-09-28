@@ -1,13 +1,13 @@
 organization := "org.make"
 name := "git-hooks-plugin"
-version := "1.0.1-SNAPSHOT"
+version := "1.0.1"
 
 description :=
   """
     |SBT plugin allowing to easilly manage git hooks on a project
   """.stripMargin
 
-scalaVersion := "2.10.4"
+scalaVersion := "2.12.2"
 
 sbtPlugin := true
 
