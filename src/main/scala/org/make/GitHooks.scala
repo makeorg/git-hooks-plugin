@@ -55,16 +55,23 @@ object GitHooks extends AutoPlugin {
     gitPrePushHook := None,
     gitPreRebaseHook := None,
     gitPreReceiveHook := None,
-    gitUpdateHook := None
+    gitUpdateHook := None,
+    Keys.onLoad in Global := {
+      Keys.onLoad.value.andThen(attachHooks)
+    }
   )
 
   override def globalSettings: Seq[Def.Setting[_]] = {
-    Keys.commands += attachHooks
+    Keys.commands += attachHooksCommand
   }
 
-  private lazy val attachHooks = Command("attach-hooks")(_ => DefaultParsers.EOF) { (state: State, _) =>
+  private val attachHooks: (State) => State = { state =>
     overrideHooks(state)
     state
+  }
+
+  private lazy val attachHooksCommand = Command("attach-hooks")(_ => DefaultParsers.EOF) { (state: State, _) =>
+    attachHooks(state)
   }
 
   private def overrideHooks(state: State): Unit = {
