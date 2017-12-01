@@ -57,7 +57,7 @@ object GitHooks extends AutoPlugin {
     gitPreReceiveHook := None,
     gitUpdateHook := None,
     Keys.onLoad in Global := {
-      Keys.onLoad.value.andThen(attachHooks)
+      (Keys.onLoad in Global).value.andThen(attachHooks)
     }
   )
 
