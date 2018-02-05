@@ -5,11 +5,11 @@
 In your `project/plugins.sbt` file:
 
 ```sbtshell
-addSbtPlugin("org.make" % "git-hooks-plugin" % "1.0.0")
+addSbtPlugin("org.make" % "git-hooks-plugin" % "1.0.4")
 
 resolvers += Resolver.url(
-  "bintray-flaroche-sbt-plugins",
-  url("http://dl.bintray.com/flaroche/make-sbt-plugins/")
+  "make-org-public",
+  url("http://dl.bintray.com/make-org/public/")
 )(Resolver.ivyStylePatterns)
 ```
 
@@ -35,6 +35,5 @@ gitUpdateHook := Some(baseDirectory.value / "hooks" / "update.sh")
 
 ## attach hooks 
 
-```bash
-sbt attach-hooks
-```
+Hooks are automatically attached when sbt is started. 
+If a hook file changes, it will be automatically updated.
