@@ -1,6 +1,6 @@
 organization := "org.make"
 name := "git-hooks-plugin"
-version := "1.0.4"
+version := "1.0.5-SNAPSHOT"
 
 description :=
   """
@@ -24,7 +24,7 @@ developers := List(
   )
 )
 
-bintrayOrganization in bintray := Some("make-org")
+bintrayOrganization := Some("make-org")
 bintrayRepository := "public"
 
 scalastyleConfig := baseDirectory.value / "scalastyle-config.xml"
