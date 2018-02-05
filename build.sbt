@@ -21,6 +21,24 @@ developers := List(
     name = "François LAROCHE",
     email = "fl@make.org",
     url = url("https://github.com/larochef")
+  ),
+  Developer(
+    id = "cpestoury",
+    name = "Charley PESTOURY",
+    email = "cp@make.org",
+    url = url("https://gitlab.com/cpestoury")
+  ),
+  Developer(
+    id = "csalmon-legagneur",
+    name = "Colin SALMON-LEGAGNEUR",
+    email = "salmonl.colin@gmail.com", 
+    url = url("https://gitlab.com/csalmon-")
+  ),
+  Developer(
+    id = "pda",
+    name = "Philippe de ARAUJO",
+    email = "pa@make.org",
+    url = url("https://gitlab.com/philippe.da")
   )
 )
 
