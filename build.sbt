@@ -42,6 +42,12 @@ developers := List(
   )
 )
 
+scmInfo := Some(ScmInfo(
+  browseUrl = url("https://gitlab.com/makeorg/devtools/git-hooks-plugin"),
+  connection = "scm:git:git://gitlab.com:makeorg/devtools/git-hooks-plugin.git",
+  devConnection = Some("scm:git:ssh://gitlab.com:makeorg/devtools/git-hooks-plugin.git")))
+
+
 bintrayOrganization := Some("make-org")
 bintrayRepository := "public"
 
