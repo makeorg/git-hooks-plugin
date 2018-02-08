@@ -6,11 +6,6 @@ In your `project/plugins.sbt` file:
 
 ```sbtshell
 addSbtPlugin("org.make" % "git-hooks-plugin" % "1.0.4")
-
-resolvers += Resolver.url(
-  "make-org-public",
-  url("http://dl.bintray.com/make-org/public/")
-)(Resolver.ivyStylePatterns)
 ```
 
 ## Configure hooks
