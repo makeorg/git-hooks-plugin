@@ -20,7 +20,7 @@ import java.io.{FileInputStream, InputStream}
 import java.nio.file.Files
 import java.nio.file.attribute.PosixFilePermissions
 import java.security.MessageDigest
-import javax.xml.bind.annotation.adapters.HexBinaryAdapter
+import java.util
 
 import sbt.complete.DefaultParsers
 import sbt.{Def, _}
@@ -114,11 +114,11 @@ object GitHooks extends AutoPlugin {
     referenceHook
       .filter(_.exists())
       .exists { hookFile =>
-        !actualHook.exists() || hashFile(actualHook) != hashFile(hookFile)
+        !actualHook.exists() || !util.Arrays.equals(hashFile(actualHook), hashFile(hookFile))
       }
   }
 
-  private def hashFile(file: File): String = {
+  private def hashFile(file: File): Array[Byte] = {
     val digest: MessageDigest = MessageDigest.getInstance("SHA-1")
     val fis: InputStream = new FileInputStream(file)
     var n: Int = 0
@@ -130,7 +130,7 @@ object GitHooks extends AutoPlugin {
         digest.update(buffer, 0, n)
       }
     }
-    new HexBinaryAdapter().marshal(digest.digest())
+    digest.digest()
   }
 
 }
