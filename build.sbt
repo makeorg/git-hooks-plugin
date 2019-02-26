@@ -7,7 +7,7 @@ description :=
     |SBT plugin allowing to easilly manage git hooks on a project
   """.stripMargin
 
-scalaVersion := "2.12.2"
+scalaVersion := "2.12.7"
 
 sbtPlugin := true
 
